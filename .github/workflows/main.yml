@@ -17,5 +17,14 @@ jobs:
         sudo apt-get install -yq cmake catch2
 
     - name: Build project
-      run: echo TODO
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+    - name: Test unitaires
+      run: |
+        cd build
+        ./masuperlib-test
 
